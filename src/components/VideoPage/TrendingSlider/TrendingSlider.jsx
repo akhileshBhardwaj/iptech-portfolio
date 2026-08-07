@@ -47,16 +47,20 @@ export default function TrendingSlider() {
             <button
               onClick={() => swiperInstance.current?.slidePrev()}
               aria-label="Previous"
-              className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center justify-center transition-colors"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 p-0 text-2xl leading-none text-gray-950 transition-colors hover:bg-gray-200"
             >
-              ‹
+              <span className="flex h-full w-full items-center justify-center pb-0.5">
+                ‹
+              </span>
             </button>
             <button
               onClick={() => swiperInstance.current?.slideNext()}
               aria-label="Next"
-              className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center justify-center transition-colors"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 p-0 text-2xl leading-none text-gray-950 transition-colors hover:bg-gray-200"
             >
-              ›
+              <span className="flex h-full w-full items-center justify-center pb-0.5">
+                ›
+              </span>
             </button>
           </div>
         </div>
