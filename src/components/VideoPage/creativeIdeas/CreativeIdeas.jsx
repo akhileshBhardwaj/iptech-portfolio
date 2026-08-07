@@ -68,27 +68,10 @@ function CreativeIdeas() {
         <motion.h2
           id="creative-ideas-showcase-heading"
           variants={headerItem}
-          className="font-display text-[1.9rem] font-bold leading-[1.1] tracking-tight text-[#12131A] sm:text-[2.25rem]"
+          className="font-display text-xl font-semibold lg:font-bold leading-[1.1] tracking-tight text-[#12131A] sm:text-[2.25rem]"
         >
           Creative <span className="text-[#FF7A45] underline">Ideas</span>
         </motion.h2>
-
-        <motion.div variants={headerItem} className="flex items-center gap-2">
-          <button
-            type="button"
-            aria-label="Previous"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#12131A]/5 text-[#12131A] transition-colors duration-200 hover:bg-[#12131A]/10 focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-[#FF7A45]"
-          >
-            <FiChevronLeft className="h-4 w-4" />
-          </button>
-          <button
-            type="button"
-            aria-label="Next"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#12131A]/5 text-[#12131A] transition-colors duration-200 hover:bg-[#12131A]/10 focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-[#FF7A45]"
-          >
-            <FiChevronRight className="h-4 w-4" />
-          </button>
-        </motion.div>
       </motion.div>
 
       {/* ---------- Grid ---------- */}
