@@ -1,0 +1,22 @@
+.hero-bullet {
+  width: 7px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-bullet-active {
+  width: 24px;
+  background: #f5b731;
+}
+
+@media (min-width: 1024px) {
+  .hero-bullet-active {
+    width: 26px;
+  }
+}

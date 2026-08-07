@@ -1,0 +1,449 @@
+/* VideoSlider.css */
+* {
+  box-sizing: border-box;
+}
+
+.video-slider-section {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 70px 30px 90px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0b0b0d;
+  color: #fff;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.bg-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+  background-image: radial-gradient(#ffd23f 1px, transparent 1px);
+  background-size: 14px 14px;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.slider-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  display: block;
+  color: #ffd23f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.header-row h1 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.25;
+  max-width: 480px;
+  margin: 0;
+}
+
+.header-row h1 em {
+  font-style: normal;
+  color: #ffd23f;
+}
+
+.header-row p {
+  color: #9a9a9a;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 320px;
+  margin: 0;
+}
+
+.viewport {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 20px 0 30px;
+}
+
+.track {
+  display: flex;
+  will-change: transform;
+}
+
+.track.animate {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-wrap {
+  flex-shrink: 0;
+  padding: 0 11px;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease,
+    filter 0.6s ease;
+  transform: scale(0.88);
+  opacity: 0.5;
+  filter: brightness(0.55);
+}
+
+.card-wrap.active {
+  transform: scale(1.08);
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.card {
+  position: relative;
+  width: 260px;
+  height: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.card-wrap.active .card {
+  box-shadow:
+    0 0 0 2px #ffd23f,
+    0 20px 45px rgba(255, 210, 63, 0.25);
+}
+
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #111;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+.duration {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.3s,
+    background 0.3s;
+}
+
+.card-wrap.active .play-btn {
+  width: 68px;
+  height: 68px;
+}
+
+.play-btn svg {
+  width: 22px;
+  height: 22px;
+  margin-left: 3px;
+}
+
+.play-overlay:hover .play-btn {
+  background: #ffd23f;
+  transform: scale(1.1);
+}
+
+.label {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  z-index: 2;
+}
+
+.category {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffb020;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card-wrap.active .category {
+  color: #ffd23f;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f2f2f2;
+  max-width: 82%;
+}
+
+.arrow-btn {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffd23f;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-wrap.active .arrow-btn {
+  display: flex;
+}
+
+.arrow-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #ffd23f;
+  border-color: #ffd23f;
+}
+
+.nav-btn:hover svg path {
+  stroke: #111;
+}
+
+.nav-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #444;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  width: 24px;
+  border-radius: 50px;
+  background: #ffd23f;
+}
+
+.view-more-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.view-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffd23f;
+  color: #111;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 28px;
+  cursor: pointer;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ddd;
+  border-top: 3px solid #111;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  gap: 12px;
+  z-index: 3;
+}
+
+.error-overlay p {
+  font-size: 14px;
+}
+
+.error-overlay button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #ffd23f;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .header-row h1 {
+    font-size: 26px;
+  }
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .card {
+    width: 220px;
+    height: 300px;
+  }
+}
+
+/* VideoSlider.css — sirf ye responsive section update/add karo, baaki file same rahegi */
+
+.video-slider-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 70px 30px 90px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden; /* 👈 accidental horizontal scroll na ho iske liye */
+}
+
+.card {
+  position: relative;
+  width: 260px;
+  height: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* 👇 Tablet */
+@media (max-width: 900px) {
+  .video-slider-section {
+    padding: 50px 20px 60px;
+  }
+  .card {
+    width: 230px;
+    height: 320px;
+  }
+}
+
+/* 👇 Mobile */
+@media (max-width: 700px) {
+  .video-slider-section {
+    padding: 40px 16px 50px;
+  }
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-row h1 {
+    font-size: 26px;
+  }
+  .header-row p {
+    max-width: 100%;
+  }
+  .card-wrap {
+    padding: 0 8px; /* gap chhota kiya taaki 2 cards ka hint dikhe */
+  }
+  .card {
+    width: min(
+      78vw,
+      260px
+    ); /* 👈 fluid width — kabhi bhi screen se bahar nahi jayegi */
+    height: 340px;
+  }
+}
+
+/* 👇 Extra small phones */
+@media (max-width: 380px) {
+  .card {
+    width: 72vw;
+    height: 300px;
+  }
+}

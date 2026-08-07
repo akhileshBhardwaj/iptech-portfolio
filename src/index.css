@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Container */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Track */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+/* Pause on hover */
+.marquee:hover .marquee-track {
+  animation-play-state: paused !important;
+}
+
+/* Left -> Right */
+.marquee-forward {
+  animation: marqueeForward 22s linear infinite;
+}
+
+/* Right -> Left */
+.marquee-reverse {
+  animation: marqueeReverse 22s linear infinite;
+}
+
+@keyframes marqueeForward {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
