@@ -38,7 +38,7 @@ function ScriptedVideo() {
     <section
       id="scripted-video-showcase"
       aria-labelledby="scripted-video-showcase-heading"
-      className="relative overflow-hidden bg-transparent px-6 py-24 sm:pb-10 lg:px-10"
+      className="relative overflow-hidden bg-transparent px-6 pt-3 pb-5 sm:pb-5 lg:px-10"
     >
       {/* ---------- Decorative background: soft blurred gradient blobs ---------- */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -68,7 +68,7 @@ function ScriptedVideo() {
         <motion.h2
           id="scripted-video-showcase-heading"
           variants={headerItem}
-          className="font-display  text-[1.9rem] font-bold leading-[1.1] tracking-tight text-[#12131A] sm:text-[2.25rem]"
+          className="font-display text-xl font-semibold lg:font-bold leading-[1.1] tracking-tight text-[#12131A] sm:text-[2.25rem]"
         >
           Scripted <span className="text-[#FF7A45] underline ">Videos</span>
         </motion.h2>
@@ -91,6 +91,14 @@ function ScriptedVideo() {
           />
         ))}
       </motion.div>
+       <div className="text-center mt-10">
+        <a
+          href="#"
+          className="  border rounded text-md font-semibold border-orange-500 px-4 py-2  text-orange-400 hover:bg-orange-400 hover:text-white  hover:border-0"
+        >
+          View All
+        </a>
+      </div>
     </section>
   );
 }
