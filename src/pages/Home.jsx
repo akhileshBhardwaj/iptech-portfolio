@@ -5,6 +5,7 @@ import VideoSection from "../components/Home/VideoSection";
 import BackgroundGlow from "../components/Contact/BackgroundGlow";
 import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import VideoSlider from "../components/Home/videoSlider/VideoSlider";
+import HomeLastBg from "../components/Home/HomeLastBg";
 
 const Home = () => {
   return (
@@ -33,6 +34,12 @@ const Home = () => {
       <section>
         <VideoSlider/>
       </section>
+
+        {/* Last bg */}
+        <section>
+          <HomeLastBg/>
+        </section>
+
     </main>
   );
 };
