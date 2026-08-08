@@ -7,7 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
-  { name: "Work", path: "/work" },
+  // { name: "Work", path: "/work" },
   { name: "About", path: "/about" },
   { name: "Testimonial", path: "/testimonial" },
   { name: "Results", path: "/result" },
