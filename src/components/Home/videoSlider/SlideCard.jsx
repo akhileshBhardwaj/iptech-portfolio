@@ -24,7 +24,6 @@ const SlideCard = ({ video, onPlay, onPauseOrEnd }) => {
           onPlay();
         })
         .catch((error) => {
-          console.error("Video play error:", error);
           setIsLoading(false);
           setHasError(true);
           setIsPlaying(false);

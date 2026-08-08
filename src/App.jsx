@@ -10,6 +10,7 @@ import Testimonial from "./pages/Testimonial";
 import Work from "./pages/Work";
 import ContactUs from "./pages/ContactUs";
 import Video from "./pages/Video";
+import Graphics from "./pages/Graphics";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "video",
         element: <Video />,
+      },
+      {
+        path: "graphics",
+        element: <Graphics />,
       },
     ],
   },
