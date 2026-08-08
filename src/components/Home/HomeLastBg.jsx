@@ -51,7 +51,7 @@ function HomeLastBg() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative order-first -mx-8 -mt-8 sm:-mx-10 sm:-mt-8 lg:order-none lg:mx-0 lg:mt-0 lg:w-full"
+          className="relative order-first -mx-8 -mt-8 sm:-mx-10 sm:-mt-8 lg:order-0 lg:mx-0 lg:mt-0 lg:w-full"
         >
           <img
             src={lastBg}
@@ -66,7 +66,7 @@ function HomeLastBg() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
-          className="relative order-last mt-6 lg:order-none lg:mt-0"
+          className="relative order-last mt-6 lg:order-0 lg:mt-0"
         >
           <motion.span
             variants={item}
@@ -128,7 +128,7 @@ function HomeLastBg() {
           <motion.div variants={item} className="mt-6 flex items-center gap-4">
             <a
               href="#work"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#F6A50C] px-6 py-3 text-sm font-bold text-[#12131A] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#f0990a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F6A50C]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#F6A50C] px-6 py-3 text-sm font-bold text-[#12131A] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#f0990a]  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F6A50C]"
             >
               View My Work
               <FiArrowRight className="h-4 w-4" aria-hidden="true" />
