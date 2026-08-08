@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { statsData } from "./statsData";
 import StatItem from "./StatItem";
@@ -10,15 +10,10 @@ const StatsBar = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col overflow-hidden rounded-2xl border border-amber-100 bg-white shadow-sm sm:flex-row sm:items-stretch"
+      className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5"
     >
       {statsData.map((stat, index) => (
-        <Fragment key={stat.label}>
-          <StatItem {...stat} index={index} />
-          {index < statsData.length - 1 && (
-            <div className="h-px w-full bg-amber-100 sm:h-auto sm:w-px" />
-          )}
-        </Fragment>
+        <StatItem key={stat.label} {...stat} index={index} />
       ))}
     </motion.div>
   );

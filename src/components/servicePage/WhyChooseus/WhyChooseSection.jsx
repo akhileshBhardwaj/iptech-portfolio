@@ -103,7 +103,7 @@ const WhyChooseSection = () => {
             breakpoints={{
               1024: { slidesPerView: 3, slidesPerGroup: 1 },
             }}
-            className="!overflow-hidden !pb-2"
+            className="overflow-hidden! pb-2!"
           >
             {whyChooseData.map((item, index) => (
               <SwiperSlide key={item.title}>

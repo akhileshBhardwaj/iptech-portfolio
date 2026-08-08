@@ -5,7 +5,7 @@ import StatsBar from "./StatsBar";
 
 const OurProcessSection = () => {
   return (
-    <section className="w-full bg-transparent px-6 py-16 md:py-24">
+    <section className="w-full  px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
         {/* ---------- HEADER ---------- */}
         <div className="mx-auto mb-14 max-w-2xl text-center">
@@ -14,7 +14,7 @@ const OurProcessSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-sm font-semibold tracking-wide text-amber-400"
+            className="inline-block rounded-full bg-[#F6E3B4] px-3.5 py-1.5 text-xs font-bold tracking-wide text-[#A9800F]"
           >
             OUR PROCESS
           </motion.span>
@@ -24,9 +24,9 @@ const OurProcessSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-3 text-3xl font-extrabold text-slate-900 sm:text-4xl"
+            className="mt-4 text-3xl font-extrabold leading-tight text-[#101B33] sm:text-4xl"
           >
-            Our Simple <span className="text-amber-400">Process</span>
+            Our Simple <span className="text-[#F5A623]">Process</span>
           </motion.h2>
 
           <motion.p
@@ -34,7 +34,7 @@ const OurProcessSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-sm leading-relaxed text-slate-500 sm:text-base"
+            className="mt-4 text-sm leading-relaxed text-[#6B7280] sm:text-base"
           >
             A transparent and efficient process that ensures the best results.
           </motion.p>
