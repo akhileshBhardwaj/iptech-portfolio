@@ -6,6 +6,7 @@ import BackgroundGlow from "../components/Contact/BackgroundGlow";
 import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import VideoSlider from "../components/Home/videoSlider/VideoSlider";
 import HomeLastBg from "../components/Home/HomeLastBg";
+import HeroGraphics from "../components/Home/heroGraphics/HeroGraphics";
 
 const Home = () => {
   return (
@@ -32,14 +33,18 @@ const Home = () => {
       </section>
       {/* Video section */}
       <section>
-        <VideoSlider/>
+        <VideoSlider />
       </section>
 
-        {/* Last bg */}
-        <section>
-          <HomeLastBg/>
-        </section>
+      {/* Graphics section */}
+      <section>
+        <HeroGraphics />
+      </section>
 
+      {/* Last bg */}
+      <section>
+        <HomeLastBg />
+      </section>
     </main>
   );
 };
