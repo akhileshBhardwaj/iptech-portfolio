@@ -1,49 +1,20 @@
 export const heroGraphicsData = [
   {
-    video:
-      "https://res.cloudinary.com/demo/video/upload/vc_auto,q_auto/dog.mp4",
-    title: "Creative Direction",
-    description:
-      "Concepts that turn a brand idea into a visual identity.",
+    image: "https://picsum.photos/seed/creative-direction/600/400",
   },
-
   {
-    video:
-      "https://res.cloudinary.com/demo/video/upload/vc_auto,q_auto/snow_horses.mp4",
-    title: "Brand Strategy",
-    description:
-      "Positioning and messaging that make your brand stand out.",
+    image: "https://picsum.photos/seed/brand-strategy/600/400",
   },
-
   {
-    video:
-      "https://res.cloudinary.com/demo/video/upload/vc_auto,q_auto/product-gallery-tutorial_hlk0na.mp4",
-    title: "Motion Graphics",
-    description:
-      "Animated visuals that bring static ideas to life.",
+    image: "https://picsum.photos/seed/motion-graphics/600/400",
   },
-
   {
-    video:
-      "https://res.cloudinary.com/demo/video/upload/vc_auto,q_auto/dog.mp4",
-    title: "UI/UX Design",
-    description:
-      "Interfaces crafted for clarity, usability, and delight.",
+    image: "https://picsum.photos/seed/ui-ux-design/600/400",
   },
-
   {
-    video:
-      "https://res.cloudinary.com/demo/video/upload/vc_auto,q_auto/snow_horses.mp4",
-    title: "Product Videos",
-    description:
-      "Showcasing products in a way that drives conversions.",
+    image: "https://picsum.photos/seed/product-videos/600/400",
   },
-
   {
-    video:
-      "https://res.cloudinary.com/demo/video/upload/vc_auto,q_auto/product-gallery-tutorial_hlk0na.mp4",
-    title: "Social Content",
-    description:
-      "Scroll-stopping content built for every social platform.",
+    image: "https://picsum.photos/seed/social-content/600/400",
   },
 ];
