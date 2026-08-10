@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Rocket,
   Users,
@@ -94,36 +95,84 @@ function TimelineWave({ count }) {
       fill="none"
       preserveAspectRatio="none"
     >
-      <path
+      <motion.path
         d={d}
         stroke="#fbbf24"
         strokeWidth="2"
         strokeDasharray="4 6"
         strokeLinecap="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        whileInView={{ pathLength: 1, opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.6, ease: "easeInOut" }}
       />
       {/* arrow head at the very end */}
-      <path
+      <motion.path
         d={`M ${width - 12} ${mid - 8} L ${width} ${mid} L ${width - 12} ${mid + 8}`}
         stroke="#fbbf24"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.4, delay: 1.5 }}
       />
     </svg>
   );
 }
 
+const nodeVariants = {
+  hidden: { opacity: 0, scale: 0.4, y: 10 },
+  show: (i) => ({
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      delay: 0.15 + i * 0.18,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const textVariants = {
+  hidden: (isTop) => ({ opacity: 0, y: isTop ? 10 : -10 }),
+  show: (custom) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      delay: 0.3 + custom.i * 0.18,
+      ease: "easeOut",
+    },
+  }),
+};
+
 export default function MilestonesTimeline() {
   return (
     <section className="w-full bg-[#fafaf8] px-6 py-16">
       <div className="mx-auto max-w-4xl text-center">
-        <span className="text-xs font-bold tracking-[0.2em] text-amber-500">
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="block text-xs font-bold tracking-[0.2em] text-amber-500"
+        >
           OUR JOURNEY SO FAR
-        </span>
-        <h2 className="mt-3 text-2xl font-bold text-slate-900 sm:text-3xl">
-          Milestones That Define <span className="text-amber-500">Our Growth</span>
-        </h2>
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-3 text-2xl font-bold text-slate-900 sm:text-3xl"
+        >
+          Milestones That Define{" "}
+          <span className="text-amber-500">Our Growth</span>
+        </motion.h2>
       </div>
 
       <div className="relative mx-auto mt-20 max-w-6xl">
@@ -140,7 +189,12 @@ export default function MilestonesTimeline() {
                 className="relative flex flex-col items-center md:h-55 md:justify-center"
               >
                 {/* text block: above node on desktop for "top", below for "bottom" */}
-                <div
+                <motion.div
+                  custom={{ i, isTop }}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-60px" }}
+                  variants={textVariants}
                   className={`order-1 flex flex-col items-center text-center md:absolute md:w-40 ${
                     isTop
                       ? "md:bottom-[calc(50%+2.75rem)]"
@@ -156,12 +210,21 @@ export default function MilestonesTimeline() {
                   <p className="mt-1 text-xs leading-relaxed text-slate-500">
                     {m.desc}
                   </p>
-                </div>
+                </motion.div>
 
                 {/* node */}
-                <div className="order-2 z-10 mt-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-amber-300 bg-white text-amber-500 shadow-sm md:mt-0">
+                <motion.div
+                  custom={i}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-60px" }}
+                  variants={nodeVariants}
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                  className="group order-2 z-10 mt-4 flex h-12 w-12 shrink-0 cursor-default items-center justify-center rounded-full border-2 border-amber-300 bg-white text-amber-500 shadow-sm transition-colors duration-300 hover:bg-amber-500 hover:text-white md:mt-0"
+                >
                   <Icon size={18} strokeWidth={1.75} />
-                </div>
+                </motion.div>
               </div>
             );
           })}

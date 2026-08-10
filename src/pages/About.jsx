@@ -4,6 +4,7 @@ import StatsSection from "../components/AboutPage/StatsSection";
 import InformSection from "../components/AboutPage/InformSection";
 import MileStone from "../components/AboutPage/MileStone";
 import impactSection from "../components/AboutPage/ImpactSection";
+import ImpactSection from "../components/AboutPage/ImpactSection";
 
 const About = () => {
   return (
@@ -28,7 +29,7 @@ const About = () => {
         </section>
       {/* impact section */}
       <section>
-        <InformSection/>
+        <ImpactSection/>
       </section>
     </div>
   );
