@@ -36,7 +36,7 @@ export default function TestimonialSlider() {
         .ts-panel .swiper-wrapper { align-items: stretch; padding: 8px 0 28px; }
       `}</style>
 
-      <div className="ts-panel relative mx-auto max-w-6xl overflow-hidden rounded-[1.5rem] bg-[#0E1330] px-4 py-10 shadow-2xl sm:rounded-[2rem] sm:px-8 sm:py-14 md:px-10 md:py-16">
+      <div className="ts-panel relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#0E1330] px-4 py-10 shadow-2xl sm:rounded-4xl sm:px-8 sm:py-14 md:px-10 md:py-16">
         {/* ambient background glow */}
         <div
           className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full opacity-20 blur-3xl"

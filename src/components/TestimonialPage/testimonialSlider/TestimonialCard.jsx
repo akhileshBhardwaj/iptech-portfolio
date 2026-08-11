@@ -55,7 +55,7 @@ export default function TestimonialCard({ testimonial, isActive }) {
 
       <div
         className={[
-          "mt-3 mb-3 h-[2px] w-8 rounded-full sm:mt-5 sm:mb-4 sm:w-10",
+          "mt-3 mb-3 h-0.5 w-8 rounded-full sm:mt-5 sm:mb-4 sm:w-10",
           isActive ? "bg-amber-400" : "bg-amber-400/50",
         ].join(" ")}
       />

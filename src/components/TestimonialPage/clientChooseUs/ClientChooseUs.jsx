@@ -36,7 +36,7 @@ export default function ClientChooseUs() {
             </span>
           </motion.div>
           <motion.span
-            className="mb-6 block h-[3px] w-14 origin-left rounded-full bg-amber-400"
+            className="mb-6 block h-0.75 w-14 origin-left rounded-full bg-amber-400"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}

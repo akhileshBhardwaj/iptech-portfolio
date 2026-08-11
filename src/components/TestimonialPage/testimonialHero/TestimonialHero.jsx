@@ -67,7 +67,7 @@ export default function TestimonialHero() {
               Testimonials
             </span>
             <motion.span
-              className="h-[2px] w-10 origin-left bg-amber-400"
+              className="h-0.5 w-10 origin-left bg-amber-400"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.3, ease: easeOut }}
@@ -104,7 +104,7 @@ export default function TestimonialHero() {
           </h1>
 
           <motion.div
-            className="mt-2 h-[3px] w-56 origin-left rounded-full bg-amber-400"
+            className="mt-2 h-0.75 w-56 origin-left rounded-full bg-amber-400"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.7, delay: 0.6, ease: easeOut }}
@@ -194,7 +194,7 @@ export default function TestimonialHero() {
         </div>
 
         {/* ---------------- RIGHT COLUMN ---------------- */}
-        <div className="relative mx-auto h-[420px] w-full max-w-[560px] sm:h-[500px] lg:h-[560px]">
+        <div className="relative mx-auto h-105 w-full max-w-140 sm:h-125 lg:h-140">
           {/* decorative swirl ring — slow ambient rotation */}
           <motion.svg
             className="pointer-events-none absolute -right-6 -top-2 h-full w-full text-amber-400"
