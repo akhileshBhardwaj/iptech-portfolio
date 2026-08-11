@@ -5,7 +5,7 @@ import "swiper/css";
 
 import GoogleReviewData from "./GoogleReviewData";
 import GoogleReviewCard from "./GoogleReviewCard";
-import GoogleReviewStatsBar from "./GoogleReviewStatsBar ";
+import GoogleReviewStatsBar from "./GoogleReviewStatsBar";
 import {
   GoogleIcon,
   StarIcon,
