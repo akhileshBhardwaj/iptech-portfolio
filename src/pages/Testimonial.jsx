@@ -4,6 +4,7 @@ import TestimonialSlider from "../components/TestimonialPage/testimonialSlider/T
 import ClientChooseUs from "../components/TestimonialPage/clientChooseUs/ClientChooseUs";
 import TestimonialLastBg from "../components/TestimonialPage/testimonialLastBg/TestimonialLastBg";
 import OurTeam from "../components/TestimonialPage/team/OurTeam";
+import GoogleReviewSection from "../components/TestimonialPage/GoogleReview/GoogleReviewSection";
 
 const Testimonial = () => {
   return (
@@ -21,16 +22,17 @@ const Testimonial = () => {
         <ClientChooseUs />
       </section>
 
-
       <section>
         <OurTeam />
       </section>
 
       <section>
-        <TestimonialLastBg />
+        <GoogleReviewSection />
       </section>
 
-      
+      <section>
+        <TestimonialLastBg />
+      </section>
     </div>
   );
 };
