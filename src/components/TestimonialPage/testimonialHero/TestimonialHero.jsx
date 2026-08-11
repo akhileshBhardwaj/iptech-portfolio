@@ -29,7 +29,7 @@ export default function TestimonialHero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#FBF3E7] font-[Inter,sans-serif]">
+    <div className="relative w-full overflow-hidden bg-transparent font-[Inter,sans-serif]">
       {/* Google Fonts: Inter for body/display, Caveat for the script accent */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap');
@@ -335,6 +335,6 @@ export default function TestimonialHero() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -29,7 +29,7 @@ export default function TestimonialSlider() {
   const goTo = (i) => swiperRef.current?.slideToLoop(i);
 
   return (
-    <section className="w-full bg-[#FBF3E7] px-3 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24">
+    <section className="w-full bg-transparent px-3 py-12 sm:px-6 sm:py-16 md:px-8 md:py-24">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap');
         .ts-panel .swiper-slide { height: auto; display: flex; align-items: stretch; }

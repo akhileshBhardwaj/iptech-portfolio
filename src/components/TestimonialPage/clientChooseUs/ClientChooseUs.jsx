@@ -16,7 +16,7 @@ const easeOut = [0.16, 1, 0.3, 1];
  */
 export default function ClientChooseUs() {
   return (
-    <section className="w-full bg-[#FBF3E7] px-6 py-16 sm:px-10 md:py-24">
+    <section className="w-full bg-transparent px-6 py-16 sm:px-10 md:py-24">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap');
       `}</style>

@@ -2,10 +2,12 @@ import React from "react";
 import TestimonialHero from "../components/TestimonialPage/testimonialHero/TestimonialHero";
 import TestimonialSlider from "../components/TestimonialPage/testimonialSlider/TestimonialSlider";
 import ClientChooseUs from "../components/TestimonialPage/clientChooseUs/ClientChooseUs";
+import TestimonialLastBg from "../components/TestimonialPage/testimonialLastBg/TestimonialLastBg";
+import OurTeam from "../components/TestimonialPage/team/OurTeam";
 
 const Testimonial = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-[#FDF8F1] ">
       {/* Hero section */}
       <section>
         <TestimonialHero />
@@ -16,8 +18,19 @@ const Testimonial = () => {
       </section>
 
       <section>
-        <ClientChooseUs/>
+        <ClientChooseUs />
       </section>
+
+
+      <section>
+        <OurTeam />
+      </section>
+
+      <section>
+        <TestimonialLastBg />
+      </section>
+
+      
     </div>
   );
 };
