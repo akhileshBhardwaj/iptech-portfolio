@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-import GoogleReviewData from "./GoogleReviewData";
+import googleReviewData from "./googleReviewData";
 import GoogleReviewCard from "./GoogleReviewCard";
 import GoogleReviewStatsBar from "./GoogleReviewStatsBar";
 import {
@@ -16,7 +16,7 @@ import {
   DoodleSpark,
 } from "./GoogleReviewIcons";
 
-const GoogleReviewSection = ({ testimonials = GoogleReviewData }) => {
+const GoogleReviewSection = ({ testimonials = googleReviewData }) => {
   const swiperRef = useRef(null);
 
   return (
