@@ -25,7 +25,7 @@ const Navbar = () => {
 
           <h2
             onClick={() => navigate("/")}
-            className="text-2xl font-extrabold tracking-wide"
+            className="text-2xl font-extrabold tracking-wide cursor-pointer "
           >
             <img src={logo} alt="" width={120} height={100} />
           </h2>
@@ -58,7 +58,7 @@ const Navbar = () => {
 
           <button
             onClick={() => navigate("/contact")}
-            className="hidden lg:block rounded-xl bg-yellow-400 px-5 py-3 font-semibold text-gray-900 transition hover:scale-105 hover:shadow-lg"
+            className="hidden cursor-pointer lg:block rounded-xl bg-yellow-400 px-5 py-3 font-semibold text-gray-900 transition hover:scale-105 hover:shadow-lg"
           >
             Contact Us
           </button>
@@ -106,7 +106,7 @@ const Navbar = () => {
                   onClick={() => {
                     (navigate("/"), setNavmenu(false));
                   }}
-                  className="text-2xl font-bold"
+                  className="text-2xl font-bold cursor-pointer "
                 >
                   <img src={logo} alt="" width={120} height={100} />
                 </h2>
