@@ -9,6 +9,7 @@ import HomeLastBg from "../components/Home/HomeLastBg";
 import HeroGraphics from "../components/Home/heroGraphics/HeroGraphics";
 import SocialMediaResults from "../components/Home/Results/SocialMediaResult/SocialMediaResults";
 import ADSresult from "../components/Home/Results/ADSresult/ADSresult";
+import SEOResultsSection from "../components/Home/Results/SEO/SEOResultsSection";
 
 const Home = () => {
   return (
@@ -49,6 +50,10 @@ const Home = () => {
 
       <section>
         <ADSresult/>
+      </section>
+
+      <section>
+        <SEOResultsSection/>
       </section>
 
       {/* Last bg */}
