@@ -7,6 +7,7 @@ import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import VideoSlider from "../components/Home/videoSlider/VideoSlider";
 import HomeLastBg from "../components/Home/HomeLastBg";
 import HeroGraphics from "../components/Home/heroGraphics/HeroGraphics";
+import SocialMediaResults from "../components/Home/Results/SocialMediaResults";
 
 const Home = () => {
   return (
@@ -39,6 +40,10 @@ const Home = () => {
       {/* Graphics section */}
       <section>
         <HeroGraphics />
+      </section>
+
+      <section>
+        <SocialMediaResults />
       </section>
 
       {/* Last bg */}
