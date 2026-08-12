@@ -1,7 +1,23 @@
-import { Play, ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { Play, Pause, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const VideoCard = ({ title, category, video }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <motion.div
       whileHover={{ y: -10 }}
@@ -22,8 +38,13 @@ const VideoCard = ({ title, category, video }) => {
     >
       {/* Video */}
 
-      <div className="relative overflow-hidden">
+      <div
+        className="relative overflow-hidden"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <video
+          ref={videoRef}
           src={video}
           muted
           autoPlay
@@ -55,31 +76,46 @@ const VideoCard = ({ title, category, video }) => {
           02:45
         </span>
 
-        {/* Play Button */}
+        {/* Play / Pause Button */}
 
-        <motion.div
-          whileHover={{ scale: 1.15 }}
-          className="
-            absolute
-            left-1/2
-            top-1/2
-            flex
-            h-20
-            w-20
-            -translate-x-1/2
-            -translate-y-1/2
-            items-center
-            justify-center
-            rounded-full
-            bg-white/90
-            backdrop-blur-md
-            shadow-2xl
-            transition
-            duration-300
-          "
-        >
-          <Play size={34} className="ml-1 fill-yellow-500 text-yellow-500" />
-        </motion.div>
+        <AnimatePresence>
+          {isHovered && (
+            <motion.button
+              onClick={togglePlay}
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.7 }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.25 }}
+              className="
+                absolute
+                left-1/2
+                top-1/2
+                flex
+                h-20
+                w-20
+                -translate-x-1/2
+                -translate-y-1/2
+                items-center
+                justify-center
+                rounded-full
+                bg-white/90
+                backdrop-blur-md
+                shadow-2xl
+              "
+            >
+              {isPlaying ? (
+                <Pause size={34} className="fill-yellow-500 text-yellow-500" />
+              ) : (
+                <Play
+                  size={34}
+                  className="ml-1 fill-yellow-500 text-yellow-500"
+                />
+              )}
+            </motion.button>
+          )}
+        </AnimatePresence>
 
         {/* Bottom Info */}
 
