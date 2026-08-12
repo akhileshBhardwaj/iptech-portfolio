@@ -8,6 +8,7 @@ import VideoSlider from "../components/Home/videoSlider/VideoSlider";
 import HomeLastBg from "../components/Home/HomeLastBg";
 import HeroGraphics from "../components/Home/heroGraphics/HeroGraphics";
 import SocialMediaResults from "../components/Home/Results/SocialMediaResult/SocialMediaResults";
+import ADSresult from "../components/Home/Results/ADSresult/ADSresult";
 
 const Home = () => {
   return (
@@ -44,6 +45,10 @@ const Home = () => {
 
       <section>
         <SocialMediaResults />
+      </section>
+
+      <section>
+        <ADSresult/>
       </section>
 
       {/* Last bg */}
