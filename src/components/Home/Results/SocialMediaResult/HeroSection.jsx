@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TrendingUp, Users, ThumbsUp, Heart } from "lucide-react";
-import phoneImg from '../../../assets/images/home/socialmediaResult-phoneIconMain-Photoroom.png'
+import phoneImg from '../../../../assets/images/home/socialmediaResult-phoneIconMain-Photoroom.png'
 
 const containerVariants = {
   hidden: {},
@@ -53,10 +53,10 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Right column - phone mockup */}
-      <div className="relative flex justify-center lg:justify-end items-center min-h-[420px]">
+      <div className="relative flex justify-center lg:justify-end items-center min-h-105">
         {/* dashed orbit */}
         <motion.div
-          className="absolute w-[380px] h-[380px] rounded-full border border-dashed border-[#F5A623]/40"
+          className="absolute w-95 h-95 rounded-full border border-dashed border-[#F5A623]/40"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
         />
@@ -130,7 +130,7 @@ const HeroSection = () => {
           <img
             src={phoneImg}
             alt="Social media post preview on phone"
-            className="w-[240px] sm:w-[270px] drop-shadow-2xl select-none"
+            className="w-60 sm:w-67.5 drop-shadow-2xl select-none"
             draggable="false"
           />
         </motion.div>

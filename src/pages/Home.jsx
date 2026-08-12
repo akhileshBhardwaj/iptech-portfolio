@@ -7,7 +7,7 @@ import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import VideoSlider from "../components/Home/videoSlider/VideoSlider";
 import HomeLastBg from "../components/Home/HomeLastBg";
 import HeroGraphics from "../components/Home/heroGraphics/HeroGraphics";
-import SocialMediaResults from "../components/Home/Results/SocialMediaResults";
+import SocialMediaResults from "../components/Home/Results/SocialMediaResult/SocialMediaResults";
 
 const Home = () => {
   return (
