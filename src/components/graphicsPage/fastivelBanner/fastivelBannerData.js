@@ -1,51 +1,44 @@
+import ayodhya from "../../../assets/images/graphicsImage/festivalBanner/ayodhya.jpeg";
+import jagannath from "../../../assets/images/graphicsImage/festivalBanner/jagannath.jpg";
+import prayagraj from "../../../assets/images/graphicsImage/festivalBanner/prayagraj.jpg";
+import shivRam from "../../../assets/images/graphicsImage/festivalBanner/shivRam.jpg";
+
 const fastivelBannerData = [
   {
     id: "fb-01",
-    title: "Diwali Lights & Diyas Collection",
-    brand: "Festive Store",
+    title: "Ayodhya Darshan",
+    brand: "Safariyo Travels",
     description:
-      "Bright diyas, fairy lights and rangoli decor to light up your Diwali celebrations.",
-    category: "Diwali",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diya%20Festival.jpg",
+      "A travel promotional creative showcasing the spiritual beauty of Ayodhya and its iconic temples, designed to attract travelers looking for a memorable pilgrimage experience.",
+    image: ayodhya,
   },
 
   {
     id: "fb-02",
-    title: "Colors of Holi Special Edit",
-    brand: "Rang Bazaar",
+    title: "Jagannath Yatra",
+    brand: "Safariyo Travels",
     description:
-      "Vibrant gulal colors and water guns to make your Holi celebration unforgettable.",
-    category: "Holi",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:Redirect/file/HOLI%20THE%20FESTIVAL%20OF%20COLORS%20INDIA.jpg",
+      "A vibrant promotional design for the Jagannath Yatra, highlighting the spiritual journey, devotional atmosphere and memorable experience of visiting Jagannath.",
+    image: jagannath,
   },
 
   {
     id: "fb-03",
-    title: "Navratri Garba Night Essentials",
-    brand: "Chaniya Choli House",
+    title: "Prayagraj & Ayodhya Tour",
+    brand: "Safariyo Travels",
     description:
-      "Traditional chaniya choli and dandiya sticks for nine nights of Navratri dance.",
-    category: "Navratri",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:Redirect/file/Navratri%20Garba.jpg",
+      "A captivating travel creative featuring popular spiritual destinations including Ayodhya and Prayagraj, created to promote a memorable pilgrimage tour.",
+    image: prayagraj,
   },
 
   {
     id: "fb-04",
-    title: "Christmas Tree & Decor Ideas",
-    brand: "Xmas Corner",
+    title: "Shiv Ram Darshan",
+    brand: "Safariyo Travels",
     description:
-      "Ornaments, fairy lights and festive decor to make your Christmas tree shine.",
-    category: "Christmas",
-    image:
-      "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=1200&q=80",
+      "A devotional travel promotion featuring Shiv Ram Darshan, highlighting the sacred temples, spiritual journey and opportunity to experience divine destinations.",
+    image: shivRam,
   },
 ];
 
 export default fastivelBannerData;
-
-
-
-
