@@ -14,7 +14,7 @@ export default function GraphicsInfoPanel({ data }) {
 
       <div className="flex flex-wrap gap-3 mt-2">
         <a
-          href="#"
+          href="https://drive.google.com/drive/folders/1dWI-HuTRGappgBM2umktwKfSVWZMHtBc"
           className="flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 font-bold text-sm px-5 py-2.5 rounded-xl transition-colors active:scale-95"
         >
           View More

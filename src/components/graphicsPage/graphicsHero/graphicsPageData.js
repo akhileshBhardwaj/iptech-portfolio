@@ -1,44 +1,56 @@
+import img1 from "../../../assets/images/graphicsImage/videoPageSlider/img1.jpg";
+import img2 from "../../../assets/images/graphicsImage/videoPageSlider/img2.jpg";
+import bridal1 from "../../../assets/images/graphicsImage/videoPageSlider/bridal1.jpg";
+import bridal2 from "../../../assets/images/graphicsImage/videoPageSlider/bridal2.jpg";
+import shivRatri from "../../../assets/images/graphicsImage/videoPageSlider/shivRatri.jpeg";
+import varanasi from "../../../assets/images/graphicsImage/videoPageSlider/varanasi.jpg";
+
 export const graphicsPageData = [
   {
     id: 1,
-    title: "Brand Identity Reel",
-    thumbnail: "https://picsum.photos/seed/brand-identity/1200/700",
+    title: "3D Animation Course Promotion",
+    thumbnail: img1,
     description:
-      "A showcase of logo, color and typography systems built to give brands a consistent visual voice.",
+      "A vibrant promotional graphic created to showcase a 3D animation course, highlighting career opportunities, learning benefits and key course features.",
   },
+
   {
     id: 2,
-    title: "Motion Graphics Reel",
-    thumbnail: "https://picsum.photos/seed/motion-reel/1200/700",
+    title: "Restaurant Promotional Design",
+    thumbnail: img2,
     description:
-      "Animated typography, transitions and micro-interactions crafted for modern digital campaigns.",
+      "An eye-catching food promotional graphic designed to showcase the perfect combination of Chowmein and Manchurian with a bold and appetizing visual style.",
   },
+
   {
     id: 3,
-    title: "Social Media Graphics",
-    thumbnail: "https://picsum.photos/seed/social-graphics/1200/700",
+    title: "Bridal Wedding Portrait",
+    thumbnail: bridal1,
     description:
-      "Scroll-stopping post and story templates designed to keep every platform on-brand.",
+      "An elegant bridal portrait design created to highlight traditional wedding styling, beauty and premium bridal aesthetics.",
   },
+
   {
     id: 4,
-    title: "UI/UX Case Study",
-    thumbnail: "https://picsum.photos/seed/ui-case-study/1200/700",
+    title: "Bridal Wedding Creative",
+    thumbnail: bridal2,
     description:
-      "A walkthrough of an app redesign — from wireframes to a polished, user-tested interface.",
+      "A premium wedding graphic featuring traditional bridal fashion and styling, designed with a rich and elegant visual composition.",
   },
+
   {
     id: 5,
-    title: "Product Explainer Video",
-    thumbnail: "https://picsum.photos/seed/product-explainer/1200/700",
+    title: "Maha Shivratri Festival Creative",
+    thumbnail: shivRatri,
     description:
-      "Clean visuals and simple storytelling that break down a product's value in seconds.",
+      "A devotional festival graphic created for Maha Shivratri, combining spiritual imagery, traditional elements and a vibrant visual presentation.",
   },
+
   {
     id: 6,
-    title: "Packaging & Print Design",
-    thumbnail: "https://picsum.photos/seed/packaging-design/1200/700",
+    title: "Varanasi Travel Promotion",
+    thumbnail: varanasi,
     description:
-      "Tactile, print-ready designs that carry a brand's identity from screen to shelf.",
+      "A travel promotional graphic showcasing the cultural beauty of Varanasi and popular destinations across Uttar Pradesh.",
   },
 ];
