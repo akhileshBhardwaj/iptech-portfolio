@@ -51,15 +51,6 @@ function PampletsCard({ item }) {
           />
 
           {/* Category badge — top left, always visible */}
-          <span
-            className="absolute left-4 top-4 rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.08em] shadow-sm backdrop-blur-md"
-            style={{
-              color: accent.hex,
-              backgroundColor: "rgba(255,255,255,0.85)",
-            }}
-          >
-            {item.category}
-          </span>
 
           {/* Base scrim — strengthens on hover so text stays readable */}
           <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
