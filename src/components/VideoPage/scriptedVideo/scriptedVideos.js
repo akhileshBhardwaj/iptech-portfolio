@@ -1,3 +1,17 @@
+// Scripted Video
+import iptech from '../../../assets/video/scriptedVideo/iptech.mp4'
+import ipt from '../../../assets/video/scriptedVideo/ipt.mp4'
+import vid3 from '../../../assets/video/scriptedVideo/vid3.mp4'
+import vid4 from '../../../assets/video/scriptedVideo/vid4.mp4'
+
+
+// Poster
+import iptechPoster from '../../../assets/video/scriptedVideo/iptechPoster.png'
+import vid3Poster from '../../../assets/video/scriptedVideo/vid3Poster.png'
+import vid4Poster from '../../../assets/video/scriptedVideo/vid4Poster.png'
+import iptPoster from '../../../assets/video/scriptedVideo/iptPoster.jpg'
+
+
 const scriptedVideos = [
   {
     id: "sv-01",
@@ -7,9 +21,8 @@ const scriptedVideos = [
       "A scripted journey through misty valleys, waterfalls, and the flavors that grow around them.",
     category: "Lifestyle",
     duration: "10:15",
-    poster:
-      "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: iptPoster,
+    src: ipt,
   },
   {
     id: "sv-02",
@@ -19,9 +32,8 @@ const scriptedVideos = [
       "A cozy, scripted walkthrough that turns absolute beginners into confident guitar players.",
     category: "Fitness",
     duration: "12:45",
-    poster:
-      "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: iptechPoster,
+    src: iptech,
   },
   {
     id: "sv-03",
@@ -31,9 +43,8 @@ const scriptedVideos = [
       "A clean, scripted breakdown of desk setups that balance minimal style with real productivity.",
     category: "Tech",
     duration: "07:30",
-    poster:
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid3Poster,
+    src: vid3,
   },
   {
     id: "sv-04",
@@ -43,9 +54,8 @@ const scriptedVideos = [
       "A scripted tour through vibrant markets, chopping boards, and the spices that bring it all together.",
     category: "Food",
     duration: "09:12",
-    poster:
-      "https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid4Poster,
+    src: vid4,
   },
 ];
 

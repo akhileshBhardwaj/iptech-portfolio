@@ -1,3 +1,17 @@
+
+
+// Video
+import iptech from '../../../assets/video/ugcVideos/iptech.mp4'
+import ipt from '../../../assets/video/ugcVideos/ipt.mp4'
+import vid3 from '../../../assets/video/ugcVideos/vid3.mp4'
+import vid4 from '../../../assets/video/ugcVideos/vid4.mp4'
+
+//Poster
+import iptechPoster from '../../../assets/video/ugcVideos/iptechPoster.png'
+import vid3Poster from '../../../assets/video/ugcVideos/vid3Poster.png'
+import vid4Poster from '../../../assets/video/ugcVideos/vid4Poster.png'
+import iptPoster from '../../../assets/video/ugcVideos/iptPoster.jpg'
+
 const ugcVideos = [
   {
     id: "ugc-01",
@@ -7,9 +21,8 @@ const ugcVideos = [
       "Authentic morning routine that generated high engagement and improved customer trust.",
     category: "Beauty",
     duration: "00:42",
-    poster:
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: iptechPoster,
+    src: iptech,
   },
   {
     id: "ugc-02",
@@ -19,9 +32,8 @@ const ugcVideos = [
       "Real-customer styling content that doubled click-through rate on the product page.",
     category: "Fashion",
     duration: "00:58",
-    poster:
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: iptPoster,
+    src: ipt,
   },
   {
     id: "ugc-03",
@@ -31,9 +43,8 @@ const ugcVideos = [
       "Creator-led workout demo that drove a 3x lift in free-trial signups.",
     category: "Fitness",
     duration: "01:12",
-    poster:
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid3Poster,
+    src: vid3,
   },
   {
     id: "ugc-04",
@@ -43,9 +54,8 @@ const ugcVideos = [
       "Unfiltered first impressions that turned into our best-performing paid ad.",
     category: "Tech",
     duration: "00:36",
-    poster:
-      "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid4Poster,
+    src: vid4,
   },
 ];
 

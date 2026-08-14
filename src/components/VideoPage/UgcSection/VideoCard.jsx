@@ -23,13 +23,11 @@ const cardVariants = {
 
 function VideoCard({ video, isActive, onActivate }) {
   const videoRef = useRef(null);
-  const [revealed, setRevealed] = useState(false); // lazy-mount <video> once in view
+  const [revealed, setRevealed] = useState(false);
   const [spot, setSpot] = useState({ x: 50, y: 50, visible: false });
 
   const accent = CATEGORY_ACCENT[video.category] || DEFAULT_ACCENT;
 
-  // Playback is driven ONLY by isActive (click-controlled via parent's
-  // activeId). No hover-based play/pause here.
   useEffect(() => {
     const el = videoRef.current;
     if (!el) return;
@@ -38,7 +36,7 @@ function VideoCard({ video, isActive, onActivate }) {
       const playPromise = el.play();
       if (playPromise && typeof playPromise.catch === "function") {
         playPromise.catch(() => {
-          /* autoplay can be rejected by the browser — fail silently */
+          /* autoplay with audio can be rejected — fail silently */
         });
       }
     } else {
@@ -47,8 +45,6 @@ function VideoCard({ video, isActive, onActivate }) {
     }
   }, [isActive]);
 
-  // Hover/mouse-move is used ONLY for the visual spotlight effect now —
-  // it no longer touches playback state.
   const handleMouseLeave = useCallback(() => {
     setSpot((s) => ({ ...s, visible: false }));
   }, []);
@@ -60,10 +56,9 @@ function VideoCard({ video, isActive, onActivate }) {
     setSpot({ x, y, visible: true });
   }, []);
 
-  // Click-only playback toggle. Play → tell parent this card is active.
-  // Pause → tell parent nothing is active; the effect above resets
-  // currentTime to 0, and since isActive becomes false we swap back
-  // to rendering the poster image (not the video's last frame).
+  // Toggles play/pause. Called both from the button AND from tapping
+  // anywhere on the video/thumbnail area (needed for mobile, where
+  // there's no hover state to reveal the button once it's hidden).
   const togglePlay = useCallback(
     (e) => {
       e.stopPropagation();
@@ -72,6 +67,17 @@ function VideoCard({ video, isActive, onActivate }) {
       } else {
         setRevealed(true);
         onActivate(video.id);
+        // Call play() synchronously inside the click/tap handler too,
+        // so the user-gesture context is preserved for unmuted
+        // autoplay on mobile browsers (Safari/Chrome on iOS/Android
+        // are strict about this).
+        requestAnimationFrame(() => {
+          const el = videoRef.current;
+          if (el) {
+            const p = el.play();
+            if (p && typeof p.catch === "function") p.catch(() => {});
+          }
+        });
       }
     },
     [isActive, onActivate, video.id],
@@ -100,9 +106,6 @@ function VideoCard({ video, isActive, onActivate }) {
       whileHover={{ y: -8, scale: 1.015 }}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
     >
-      {/* Animated gradient border shell — spins only on hover/focus.
-          Tailwind arbitrary-property utilities drive the play state,
-          so no per-instance <style> tag is needed. */}
       <div
         data-ugc-border
         className="relative flex w-full flex-col rounded-[1.75rem] p-[1.5px] [animation-play-state:paused] group-hover:[animation-play-state:running] group-focus-within:[animation-play-state:running]"
@@ -119,10 +122,14 @@ function VideoCard({ video, isActive, onActivate }) {
           onKeyDown={handleKeyDown}
         >
           {/* ---------- Thumbnail / video area ---------- */}
-          <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-[#EEF0F5]">
-            {/* Video is only rendered/visible while actually playing.
-                Pausing swaps back to the poster image instead of
-                freezing on the video's last frame. */}
+          {/* onClick here: tapping the video while it's playing pauses
+              it and brings the icon back — works for touch AND mouse,
+              no hover dependency. Button's own onClick stops
+              propagation so this doesn't double-fire. */}
+          <div
+            className="relative aspect-video w-full shrink-0 overflow-hidden bg-[#EEF0F5]"
+            onClick={togglePlay}
+          >
             {revealed && (
               <video
                 ref={videoRef}
@@ -130,8 +137,7 @@ function VideoCard({ video, isActive, onActivate }) {
                   playing ? "opacity-100" : "pointer-events-none opacity-0"
                 }`}
                 src={video.src}
-                poster={video.poster}
-                muted
+                // poster={video.poster}
                 loop
                 playsInline
                 preload="metadata"
@@ -147,7 +153,6 @@ function VideoCard({ video, isActive, onActivate }) {
               }`}
             />
 
-            {/* Mouse-tracking spotlight (visual-only, no playback tie-in) */}
             <div
               className="pointer-events-none absolute inset-0 transition-opacity duration-300"
               style={{
@@ -156,10 +161,8 @@ function VideoCard({ video, isActive, onActivate }) {
               }}
             />
 
-            {/* Base scrim for legibility, strengthens on hover */}
             <div className="absolute inset-0 bg-linear-to-t from-black/45 via-black/0 to-black/10 opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
 
-            {/* Category badge — top left */}
             <span
               className="absolute left-4 top-4 rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.08em] shadow-sm backdrop-blur-md transition-shadow duration-300"
               style={{
@@ -175,7 +178,6 @@ function VideoCard({ video, isActive, onActivate }) {
               </span>
             </span>
 
-            {/* Duration badge — bottom right, slides in on hover */}
             <span className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1 font-mono text-[0.7rem] tracking-tight text-white backdrop-blur-md transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
               {playing && (
                 <span className="relative flex h-1.5 w-1.5">
@@ -186,7 +188,12 @@ function VideoCard({ video, isActive, onActivate }) {
               {video.duration}
             </span>
 
-            {/* Center play/pause control — the ONLY way to start/stop playback */}
+            {/* Center play/pause icon — visible only while paused.
+                While playing, it's hidden (opacity-0 + pointer-events-
+                none) so it doesn't sit on top of the video; tapping
+                anywhere in this area (handled above) pauses & brings
+                it back. This is state-driven, not hover-driven, so it
+                works identically on phones. */}
             <button
               type="button"
               onClick={togglePlay}
@@ -194,7 +201,11 @@ function VideoCard({ video, isActive, onActivate }) {
                 playing ? `Pause ${video.title}` : `Play ${video.title}`
               }
               aria-pressed={playing}
-              className="absolute inset-0 m-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-[#12131A] shadow-lg backdrop-blur-md transition-all duration-300 ease-out focus-visible:outline  focus-visible:outline-offset-2 group-hover:h-16 group-hover:w-16 group-hover:bg-white"
+              className={`absolute inset-0 m-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-[#12131A] shadow-lg backdrop-blur-md transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-offset-2 group-hover:h-16 group-hover:w-16 group-hover:bg-white ${
+                playing
+                  ? "pointer-events-none opacity-0"
+                  : "pointer-events-auto opacity-100"
+              }`}
               style={{ outlineColor: accent.hex }}
             >
               <motion.span
@@ -210,9 +221,7 @@ function VideoCard({ video, isActive, onActivate }) {
             </button>
           </div>
 
-          {/* ---------- Text area ---------- */}
-          {/* flex-1 + flex-col so this block fills remaining card height
-              and every card in a row lines up regardless of content length */}
+          {/* ---------- Text area (unchanged) ---------- */}
           <div className="relative flex flex-1 flex-col px-5 pb-5 pt-4">
             <h3 className="line-clamp-2 min-h-[2.7em] font-display text-[1.05rem] font-semibold leading-snug text-[#12131A]">
               {video.title}
@@ -224,8 +233,6 @@ function VideoCard({ video, isActive, onActivate }) {
               {video.description}
             </p>
 
-            {/* Signature element: animated "scrub line" — reads as a
-                video timeline, sweeps a playhead while playing */}
             <div className="relative mt-4 h-0.75 w-full shrink-0 overflow-hidden rounded-full bg-[#EEF0F5]">
               <motion.div
                 className="absolute inset-y-0 left-0 rounded-full"
