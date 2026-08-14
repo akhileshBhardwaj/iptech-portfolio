@@ -145,7 +145,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-yellow-500 py-4 text-lg font-semibold text-black shadow-lg transition-all hover:scale-[1.02] hover:shadow-yellow-300/50 active:scale-[0.97]"
+          className="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-linear-to-r from-yellow-400 to-yellow-500 py-4 text-lg font-semibold text-black shadow-lg transition-all hover:scale-[1.02] hover:shadow-yellow-300/50 active:scale-[0.97]"
         >
           {loading ? (
             <>

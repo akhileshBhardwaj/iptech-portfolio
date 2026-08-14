@@ -1,20 +1,27 @@
+import digitalmarketing from "../../../assets/images/graphicsImage/digitalMarketing.jpeg";
+import iptech from "../../../assets/images/graphicsImage/iptech.jpg";
+import iptechWorkshop from "../../../assets/images/graphicsImage/iptechWorkshop.png";
+import MAHAKUMBHA from "../../../assets/images/graphicsImage/MAHAKUMBH.jpg";
+import Safariyo from "../../../assets/images/graphicsImage/Safariyo.jpg";
+import gayaImg from "../../../assets/images/graphicsImage/gayaImg.jpg";
+
 export const heroGraphicsData = [
   {
-    image: "https://picsum.photos/seed/creative-direction/600/400",
+    image: digitalmarketing,
   },
   {
-    image: "https://picsum.photos/seed/brand-strategy/600/400",
+    image: iptech,
   },
   {
-    image: "https://picsum.photos/seed/motion-graphics/600/400",
+    image: iptechWorkshop,
   },
   {
-    image: "https://picsum.photos/seed/ui-ux-design/600/400",
+    image: MAHAKUMBHA,
   },
   {
-    image: "https://picsum.photos/seed/product-videos/600/400",
+    image: Safariyo,
   },
   {
-    image: "https://picsum.photos/seed/social-content/600/400",
+    image: gayaImg,
   },
 ];

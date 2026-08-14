@@ -46,29 +46,29 @@ const HeroGraphics = () => {
             GRAPHICS
           </motion.span>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-6 text-2xl font-bold  text-slate-900  md:text-4xl"
-          >
-            Motion That Makes <br />
-            <span className="text-amber-400"> Brands </span>
-            Move
-          </motion.h2>
+        <motion.h2
+  initial={{ opacity: 0, y: 16 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: 0.1 }}
+  className="mt-6 text-2xl font-bold text-slate-900 md:text-4xl"
+>
+  Visuals That Make <br />
+  <span className="text-amber-400"> Brands </span>
+  Stand Out
+</motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 max-w-md text-base leading-relaxed text-slate-500"
-          >
-            From eye-catching graphics to engaging motion videos, we craft
-            visual content that captures attention and tells your brand's story
-            with impact.
-          </motion.p>
+<motion.p
+  initial={{ opacity: 0, y: 16 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  className="mt-6 max-w-md text-base leading-relaxed text-slate-500"
+>
+  We create eye-catching graphics that turn ideas into powerful visuals.
+  From social media designs and promotional creatives to brand visuals,
+  every design is crafted to capture attention and strengthen your brand.
+</motion.p>
 
           <motion.button
             onClick={() => navigate("/graphics")}
