@@ -188,12 +188,14 @@ function VideoCard({ video, isActive, onActivate }) {
               {video.duration}
             </span>
 
-            {/* Center play/pause icon — visible only while paused.
-                While playing, it's hidden (opacity-0 + pointer-events-
-                none) so it doesn't sit on top of the video; tapping
-                anywhere in this area (handled above) pauses & brings
-                it back. This is state-driven, not hover-driven, so it
-                works identically on phones. */}
+            {/* Center play/pause icon — no background/shadow-container
+                now, just the icon itself with a drop-shadow for
+                legibility over any thumbnail. Visible only while
+                paused; while playing it's hidden (opacity-0 +
+                pointer-events-none) so it doesn't sit on top of the
+                video. Tapping anywhere in this area (handled above)
+                pauses & brings it back — state-driven, not
+                hover-driven, so it works identically on phones. */}
             <button
               type="button"
               onClick={togglePlay}
@@ -201,21 +203,24 @@ function VideoCard({ video, isActive, onActivate }) {
                 playing ? `Pause ${video.title}` : `Play ${video.title}`
               }
               aria-pressed={playing}
-              className={`absolute inset-0 m-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-[#12131A] shadow-lg backdrop-blur-md transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-offset-2 group-hover:h-16 group-hover:w-16 group-hover:bg-white ${
+              className={`absolute inset-0 m-auto flex h-14 w-14 items-center justify-center text-white transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-offset-2 group-hover:h-16 group-hover:w-16 ${
                 playing
                   ? "pointer-events-none opacity-0"
                   : "pointer-events-auto opacity-100"
               }`}
-              style={{ outlineColor: accent.hex }}
+              style={{
+                outlineColor: accent.hex,
+                filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.45))",
+              }}
             >
               <motion.span
                 whileTap={{ scale: 0.85 }}
                 className="flex items-center justify-center"
               >
                 {playing ? (
-                  <FiPause className="h-5 w-5" />
+                  <FiPause className="h-8 w-8" />
                 ) : (
-                  <FiPlay className="ml-0.5 h-5 w-5" />
+                  <FiPlay className="ml-0.5 h-8 w-8" />
                 )}
               </motion.span>
             </button>

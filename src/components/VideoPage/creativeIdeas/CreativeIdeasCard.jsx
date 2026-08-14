@@ -38,7 +38,7 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
       const playPromise = el.play();
       if (playPromise && typeof playPromise.catch === "function") {
         playPromise.catch(() => {
-          /* autoplay can be rejected by the browser — fail silently */
+          /* autoplay with audio can be rejected by the browser — fail silently */
         });
       }
     } else {
@@ -60,10 +60,9 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
     setSpot({ x, y, visible: true });
   }, []);
 
-  // Click-only playback toggle. Play → tell parent this card is active.
-  // Pause → tell parent nothing is active; the effect above resets
-  // currentTime to 0, and since isActive becomes false we swap back
-  // to rendering the poster image (not the video's last frame).
+  // Toggles play/pause. Called from the button AND from tapping
+  // anywhere on the video area (needed for mobile — no hover state
+  // there to reveal a hidden button).
   const togglePlay = useCallback(
     (e) => {
       e.stopPropagation();
@@ -72,6 +71,17 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
       } else {
         setRevealed(true);
         onActivate(video.id);
+        // Call play() synchronously inside the click/tap handler too,
+        // so the user-gesture context is preserved for unmuted
+        // autoplay on mobile browsers (Safari/Chrome on iOS/Android
+        // are strict about this).
+        requestAnimationFrame(() => {
+          const el = videoRef.current;
+          if (el) {
+            const p = el.play();
+            if (p && typeof p.catch === "function") p.catch(() => {});
+          }
+        });
       }
     },
     [isActive, onActivate, video.id],
@@ -119,7 +129,14 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
           onKeyDown={handleKeyDown}
         >
           {/* ---------- Thumbnail / video area ---------- */}
-          <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-[#EEF0F5]">
+          {/* onClick here: tapping the video while it's playing pauses
+              it and brings the icon back — works for touch AND mouse,
+              no hover dependency. Button's own onClick stops
+              propagation so this doesn't double-fire. */}
+          <div
+            className="relative aspect-video w-full shrink-0 overflow-hidden bg-[#EEF0F5]"
+            onClick={togglePlay}
+          >
             {/* Video is only rendered/visible while actually playing.
                 Pausing swaps back to the poster image instead of
                 freezing on the video's last frame. */}
@@ -131,7 +148,6 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
                 }`}
                 src={video.src}
                 poster={video.poster}
-                muted
                 loop
                 playsInline
                 preload="metadata"
@@ -186,7 +202,14 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
               {video.duration}
             </span>
 
-            {/* Center play/pause control — the ONLY way to start/stop playback */}
+            {/* Center play/pause icon — no background/shadow-container
+                now, just the icon itself with a drop-shadow for
+                legibility over any thumbnail. Visible only while
+                paused; while playing it's hidden (opacity-0 +
+                pointer-events-none) so it doesn't sit on top of the
+                video. Tapping anywhere in this area (handled above)
+                pauses & brings it back — state-driven, not
+                hover-driven, so it works identically on phones. */}
             <button
               type="button"
               onClick={togglePlay}
@@ -194,17 +217,24 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
                 playing ? `Pause ${video.title}` : `Play ${video.title}`
               }
               aria-pressed={playing}
-              className="absolute inset-0 m-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-[#12131A] shadow-lg backdrop-blur-md transition-all duration-300 ease-out focus-visible:outline  focus-visible:outline-offset-2 group-hover:h-16 group-hover:w-16 group-hover:bg-white"
-              style={{ outlineColor: accent.hex }}
+              className={`absolute inset-0 m-auto flex h-14 w-14 items-center justify-center text-white transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-offset-2 group-hover:h-16 group-hover:w-16 ${
+                playing
+                  ? "pointer-events-none opacity-0"
+                  : "pointer-events-auto opacity-100"
+              }`}
+              style={{
+                outlineColor: accent.hex,
+                filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.45))",
+              }}
             >
               <motion.span
                 whileTap={{ scale: 0.85 }}
                 className="flex items-center justify-center"
               >
                 {playing ? (
-                  <FiPause className="h-5 w-5" />
+                  <FiPause className="h-8 w-8" />
                 ) : (
-                  <FiPlay className="ml-0.5 h-5 w-5" />
+                  <FiPlay className="ml-0.5 h-8 w-8" />
                 )}
               </motion.span>
             </button>

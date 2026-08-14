@@ -1,3 +1,16 @@
+// video
+
+import vid3 from "../../../assets/video/creativeIVideo/vid3.mp4";
+import vid4 from "../../../assets/video/creativeIVideo/vid4.mp4";
+import vid5 from "../../../assets/video/creativeIVideo/vid5.mp4";
+import vid6 from "../../../assets/video/creativeIVideo/vid6.mp4";
+
+// Poster
+import vid3Poster from "../../../assets/video/creativeIVideo/vid3Poster.png";
+import vid4Poster from "../../../assets/video/creativeIVideo/vid4Poster.png";
+import vid5Poster from "../../../assets/video/creativeIVideo/vid5Poster.png";
+import vid6Poster from "../../../assets/video/creativeIVideo/vid6Poster.png";
+
 const creativeIdeas = [
   {
     id: "ci-01",
@@ -7,9 +20,8 @@ const creativeIdeas = [
       "A creative upcycling idea that turns leftover wood pieces into gallery-worthy wall art.",
     category: "Lifestyle",
     duration: "06:20",
-    poster:
-      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid4Poster,
+    src: vid4,
   },
   {
     id: "ci-02",
@@ -19,9 +31,8 @@ const creativeIdeas = [
       "A simple painting technique that turns plain ceramic mugs into one-of-a-kind pieces.",
     category: "Fashion",
     duration: "08:05",
-    poster:
-      "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid5Poster,
+    src: vid5,
   },
   {
     id: "ci-03",
@@ -31,9 +42,8 @@ const creativeIdeas = [
       "An easy step-by-step idea for weaving your own macrame plant hangers at home.",
     category: "Lifestyle",
     duration: "09:40",
-    poster:
-      "https://images.unsplash.com/photo-1545165375-7c5f9dc7a2d8?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid3Poster,
+    src: vid3,
   },
   {
     id: "ci-04",
@@ -43,9 +53,8 @@ const creativeIdeas = [
       "A budget-friendly upcycling idea that gives old glass jars a second life as warm table lamps.",
     category: "Tech",
     duration: "05:55",
-    poster:
-      "https://images.unsplash.com/photo-1524634126442-357e0eac3c14?q=80&w=1200&auto=format&fit=crop",
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    poster: vid6Poster,
+    src: vid6,
   },
 ];
 

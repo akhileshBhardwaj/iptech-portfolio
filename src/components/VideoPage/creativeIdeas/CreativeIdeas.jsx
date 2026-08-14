@@ -70,7 +70,7 @@ function CreativeIdeas() {
           variants={headerItem}
           className="font-display text-xl font-semibold lg:font-bold leading-[1.1] tracking-tight text-[#12131A] sm:text-[2.25rem]"
         >
-          Creative <span className="text-[#FF7A45] underline">Ideas</span>
+          Creative <span className="text-[#FF7A45] underline">Videos</span>
         </motion.h2>
       </motion.div>
 
