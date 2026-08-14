@@ -1,46 +1,43 @@
+import dental from "../../../assets/images/graphicsImage/creativeIdeas/dental.png";
+import digitalMarketing from "../../../assets/images/graphicsImage/creativeIdeas/digitalMarketing.jpeg";
+import makeup from "../../../assets/images/graphicsImage/creativeIdeas/makeup.jpg";
+import ram from "../../../assets/images/graphicsImage/creativeIdeas/ram.jpg";
+
 const creativeIdeasData = [
   {
     id: "ci-01",
-    title: "Minimal Poster Design Concepts",
-    brand: "Studio Blank",
+    title: "Emergency Dental Care Creative",
+    brand: "Patel Dental Clinic",
     description:
-      "Bold typography and negative space combined to create striking minimal poster ideas.",
-    category: "Design",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80",
+      "A clean and informative dental care creative designed to highlight emergency treatments and encourage patients to book an appointment quickly.",
+    image: dental,
   },
 
   {
     id: "ci-02",
-    title: "Creative Product Photography",
-    brand: "Lens & Light Co.",
+    title: "Digital Marketing Promotion",
+    brand: "IP Tech",
     description:
-      "Inventive lighting and composition techniques to make everyday products look extraordinary.",
-    category: "Photography",
-    image:
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80",
+      "A bold promotional creative highlighting digital marketing services and helping businesses grow their online presence through web and social media.",
+    image: digitalMarketing,
   },
 
   {
     id: "ci-03",
-    title: "Brand Identity Moodboards",
-    brand: "Mark & Co.",
+    title: "Makeup Beauty Campaign",
+    brand: "Mr. & Mrs. Unisex Beauty Salon",
     description:
-      "Color palettes, logo marks and mood boards that shape a memorable brand identity.",
-    category: "Branding",
-    image:
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80",
+      "A stylish beauty campaign creative combining portrait photography and bold typography to promote professional makeup and salon services.",
+    image: makeup,
   },
 
   {
     id: "ci-04",
-    title: "Hand-Drawn Illustration Series",
-    brand: "Inkwell Studio",
+    title: "Ram Mandir Anniversary Creative",
+    brand: "Ram Mandir",
     description:
-      "Playful hand-drawn illustrations that bring warmth and character to any project.",
-    category: "Illustration",
-    image:
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80",
+      "A devotional commemorative design created for the Ram Mandir anniversary, featuring a detailed illustration of Lord Ram and a strong spiritual visual composition.",
+    image: ram,
   },
 ];
 
