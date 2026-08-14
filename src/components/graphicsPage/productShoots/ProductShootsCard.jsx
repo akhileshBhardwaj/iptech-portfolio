@@ -39,7 +39,7 @@ function ProductShootsCard({ item }) {
         }}
       >
         <div
-          className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.7rem] bg-[#EEF0F5] shadow-[0_1px_2px_rgba(18,19,26,0.04)] transition-shadow duration-500 group-hover:shadow-[0_24px_48px_-16px_rgba(18,19,26,0.18)]"
+          className="relative aspect-4/5 w-full overflow-hidden rounded-[1.7rem] bg-[#EEF0F5] shadow-[0_1px_2px_rgba(18,19,26,0.04)] transition-shadow duration-500 group-hover:shadow-[0_24px_48px_-16px_rgba(18,19,26,0.18)]"
           tabIndex={0}
           role="group"
           aria-label={`${item.title} — ${item.brand}`}
