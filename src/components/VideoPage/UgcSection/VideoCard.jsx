@@ -163,20 +163,7 @@ function VideoCard({ video, isActive, onActivate }) {
 
             <div className="absolute inset-0 bg-linear-to-t from-black/45 via-black/0 to-black/10 opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
 
-            <span
-              className="absolute left-4 top-4 rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.08em] shadow-sm backdrop-blur-md transition-shadow duration-300"
-              style={{
-                color: accent.hex,
-                backgroundColor: "rgba(255,255,255,0.85)",
-              }}
-            >
-              <span
-                className="transition-[filter] duration-300 group-hover:filter-[drop-shadow(0_0_6px_var(--glow))]"
-                style={{ "--glow": accent.hex }}
-              >
-                {video.category}
-              </span>
-            </span>
+           
 
             <span className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1 font-mono text-[0.7rem] tracking-tight text-white backdrop-blur-md transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
               {playing && (

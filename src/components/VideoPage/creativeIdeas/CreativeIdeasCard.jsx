@@ -175,16 +175,7 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
             {/* Base scrim for legibility, strengthens on hover */}
             <div className="absolute inset-0 bg-linear-to-t from-black/45 via-black/0 to-black/10 opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
 
-            {/* Category badge — top left */}
-            <span
-              className="absolute left-3 top-3 rounded-full px-2.5 py-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.06em] shadow-sm backdrop-blur-md transition-shadow duration-300"
-              style={{
-                color: accent.hex,
-                backgroundColor: "rgba(255,255,255,0.85)",
-              }}
-            >
-             
-            </span>
+           
 
             {/* Duration badge — bottom right, slides in on hover */}
             <span className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md bg-black/70 px-2 py-0.5 font-mono text-[0.62rem] tracking-tight text-white backdrop-blur-md transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
