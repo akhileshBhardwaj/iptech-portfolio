@@ -183,12 +183,7 @@ function ShootCard({ video, isActive, onActivate }) {
                 backgroundColor: "rgba(255,255,255,0.85)",
               }}
             >
-              <span
-                className="transition-[filter] duration-300 group-hover:filter-[drop-shadow(0_0_6px_var(--glow))]"
-                style={{ "--glow": accent.hex }}
-              >
-                {video.category}
-              </span>
+             
             </span>
 
             {/* Duration badge — bottom right, slides in on hover */}

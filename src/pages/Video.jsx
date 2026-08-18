@@ -16,9 +16,9 @@ const Video = () => {
       </section>
 
       {/* Trending slider section */}
-      <section className="px-4 sm:px-6 mt-10 sm:mt-14 pb-14">
+      {/* <section className="px-4 sm:px-6 mt-10 sm:mt-14 pb-14">
         <TrendingSlider />
-      </section>
+      </section> */}
 
       {/* Ugc section */}
       <section>
