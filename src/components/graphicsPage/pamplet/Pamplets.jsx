@@ -54,24 +54,24 @@ const Pamplets = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.5 }}
-        className="relative mx-auto flex max-w-350 items-center justify-between"
+        className="relative mx-auto text-center  max-w-350 items-center justify-between"
       >
         <motion.h2
           id="pamplets-showcase-heading"
           variants={headerItem}
-          className="font-display text-xl font-semibold lg:font-bold leading-[1.1] tracking-tight text-[#12131A] sm:text-[2.25rem]"
+          className="text-2xl font-bold  lg:mb-15 lg:font-bold leading-[1.1] tracking-tight text-[#12131A] sm:text-[2.25rem]"
         >
           Pamphlet <span className="text-[#FF7A45] underline">Templates</span>
         </motion.h2>
       </motion.div>
 
       {/* ---------- Grid ---------- */}
-      <motion.div
+     <motion.div
         variants={gridContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.15 }}
-        className="relative mx-auto mt-10 grid max-w-350 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7"
+        className=" relative mx-auto mt-8 grid w-full max-w-255 grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 md:gap-8 lg:grid-cols-4 lg:gap-10 xl:max-w-275 xl:gap-12 2xl:max-w-300 2xl:gap-14"
       >
         {pampletsData.map((item) => (
           <PampletsCard key={item.id} item={item} />

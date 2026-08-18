@@ -75,6 +75,8 @@ function CreativeIdeas() {
       </motion.div>
 
       {/* ---------- Grid ---------- */}
+      {/* grid-cols bumped up (2 -> 3 -> 5) and gaps tightened so each
+          card renders medium/compact instead of stretching wide. */}
       <motion.div
         variants={gridContainer}
         initial="hidden"

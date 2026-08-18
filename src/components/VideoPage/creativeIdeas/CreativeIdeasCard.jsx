@@ -115,14 +115,14 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
           so no per-instance <style> tag is needed. */}
       <div
         data-ugc-border
-        className="relative flex w-full flex-col rounded-[1.75rem] p-[1.5px] [animation-play-state:paused] group-hover:[animation-play-state:running] group-focus-within:[animation-play-state:running]"
+        className="relative flex w-full flex-col rounded-3xl p-[1.5px] [animation-play-state:paused] group-hover:[animation-play-state:running] group-focus-within:[animation-play-state:running]"
         style={{
           background: `conic-gradient(from var(--border-angle, 0deg), ${accent.hex}, transparent 30%, transparent 70%, ${accent.hex})`,
           animation: "ugc-border-spin 3.5s linear infinite",
         }}
       >
         <div
-          className="relative flex h-full flex-col overflow-hidden rounded-[1.7rem] bg-white shadow-[0_1px_2px_rgba(18,19,26,0.04)] transition-shadow duration-500 group-hover:shadow-[0_24px_48px_-16px_rgba(18,19,26,0.18)]"
+          className="relative flex h-full flex-col overflow-hidden rounded-[1.45rem] bg-white shadow-[0_1px_2px_rgba(18,19,26,0.04)] transition-shadow duration-500 group-hover:shadow-[0_24px_48px_-16px_rgba(18,19,26,0.18)]"
           tabIndex={0}
           role="group"
           aria-label={`${video.title} — ${video.brand}`}
@@ -177,7 +177,7 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
 
             {/* Category badge — top left */}
             <span
-              className="absolute left-4 top-4 rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.08em] shadow-sm backdrop-blur-md transition-shadow duration-300"
+              className="absolute left-3 top-3 rounded-full px-2.5 py-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.06em] shadow-sm backdrop-blur-md transition-shadow duration-300"
               style={{
                 color: accent.hex,
                 backgroundColor: "rgba(255,255,255,0.85)",
@@ -192,7 +192,7 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
             </span>
 
             {/* Duration badge — bottom right, slides in on hover */}
-            <span className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1 font-mono text-[0.7rem] tracking-tight text-white backdrop-blur-md transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
+            <span className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md bg-black/70 px-2 py-0.5 font-mono text-[0.62rem] tracking-tight text-white backdrop-blur-md transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
               {playing && (
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
@@ -217,7 +217,7 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
                 playing ? `Pause ${video.title}` : `Play ${video.title}`
               }
               aria-pressed={playing}
-              className={`absolute inset-0 m-auto flex h-14 w-14 items-center justify-center text-white transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-offset-2 group-hover:h-16 group-hover:w-16 ${
+              className={`absolute inset-0 m-auto flex h-11 w-11 items-center justify-center text-white transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-offset-2 group-hover:h-12 group-hover:w-12 ${
                 playing
                   ? "pointer-events-none opacity-0"
                   : "pointer-events-auto opacity-100"
@@ -232,9 +232,9 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
                 className="flex items-center justify-center"
               >
                 {playing ? (
-                  <FiPause className="h-8 w-8" />
+                  <FiPause className="h-6 w-6" />
                 ) : (
-                  <FiPlay className="ml-0.5 h-8 w-8" />
+                  <FiPlay className="ml-0.5 h-6 w-6" />
                 )}
               </motion.span>
             </button>
@@ -243,20 +243,20 @@ function CreativeIdeasCard({ video, isActive, onActivate }) {
           {/* ---------- Text area ---------- */}
           {/* flex-1 + flex-col so this block fills remaining card height
               and every card in a row lines up regardless of content length */}
-          <div className="relative flex flex-1 flex-col px-5 pb-5 pt-4">
-            <h3 className="line-clamp-2 min-h-[2.7em] font-display text-[1.05rem] font-semibold leading-snug text-[#12131A]">
+          <div className="relative flex flex-1 flex-col px-3.5 pb-3.5 pt-3">
+            <h3 className="line-clamp-2 min-h-[2.4em] font-display text-[0.9rem] font-semibold leading-snug text-[#12131A]">
               {video.title}
             </h3>
-            <p className="mt-0.5 shrink-0 text-[0.8rem] font-medium text-[#9096A6]">
+            <p className="mt-0.5 shrink-0 text-[0.72rem] font-medium text-[#9096A6]">
               {video.brand}
             </p>
-            <p className="mt-2 line-clamp-2 min-h-[2.55em] text-[0.85rem] leading-relaxed text-[#6B7280]">
+            <p className="mt-1.5 line-clamp-2 min-h-[2.2em] text-[0.75rem] leading-relaxed text-[#6B7280]">
               {video.description}
             </p>
 
             {/* Signature element: animated "scrub line" — reads as a
                 video timeline, sweeps a playhead while playing */}
-            <div className="relative mt-4 h-0.75 w-full shrink-0 overflow-hidden rounded-full bg-[#EEF0F5]">
+            <div className="relative mt-3 h-0.75 w-full shrink-0 overflow-hidden rounded-full bg-[#EEF0F5]">
               <motion.div
                 className="absolute inset-y-0 left-0 rounded-full"
                 style={{ backgroundColor: accent.hex, width: "28%" }}

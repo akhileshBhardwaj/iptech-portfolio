@@ -14,15 +14,15 @@ const Graphics = () => {
       </section>
 
       {/* Product shoots section */}
-      <section>
+      <section className="my-20">
         <ProductShoots />
       </section>
 
-      <section>
+      <section className="my-20">
         <FastivelBanner />
       </section>
 
-      <section>
+      <section className="my-20">
         <Pamplets />
       </section>
 
