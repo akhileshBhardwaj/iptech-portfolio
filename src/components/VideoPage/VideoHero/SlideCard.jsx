@@ -10,10 +10,10 @@ export default function SlideCard({
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="relative w-full h-full min-h-55 sm:min-h-75 lg:min-h-95 bg-neutral-900">
+    <div className="relative w-full h-full bg-neutral-900 overflow-hidden">
       {isPlaying ? (
         <video
-          className="w-full h-full min-h-55 sm:min-h-75 lg:min-h-95object-cover block"
+          className="absolute inset-0 w-full h-full object-cover block"
           src={data.video}
           autoPlay
           controls
@@ -25,13 +25,13 @@ export default function SlideCard({
         <>
           {!imgError ? (
             <img
-              className="w-full h-full min-h-55 sm:min-h-75 lg:min-h-95 object-cover block"
+              className="absolute inset-0 w-full h-full object-cover block"
               src={data.thumbnail}
               alt={data.title}
               onError={() => setImgError(true)}
             />
           ) : (
-            <div className="w-full h-full min-h-55 sm:min-h-75 lg:min-h-95 flex items-center justify-center bg-neutral-800 text-neutral-400 text-sm">
+            <div className="absolute inset-0 flex items-center justify-center bg-neutral-800 text-neutral-400 text-sm">
               Thumbnail not available
             </div>
           )}

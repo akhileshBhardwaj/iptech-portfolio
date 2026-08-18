@@ -1,18 +1,22 @@
-// Scripted Video
+// Video
 
-import iptech from '../../../assets/video/scriptedVideo/iptech.mp4'
-import ipt from '../../../assets/video/scriptedVideo/ipt.mp4'
-import vid3 from '../../../assets/video/scriptedVideo/vid3.mp4'
-import vid4 from '../../../assets/video/scriptedVideo/vid4.mp4'
+import iptech from "../../../assets/video/scriptedVideo/iptech.mp4";
 
+import ipt from "../../../assets/video/scriptedVideo/ipt.mp4";
+
+import vid3 from "../../../assets/video/scriptedVideo/vid3.mp4";
+
+import vid4 from "../../../assets/video/scriptedVideo/vid4.mp4";
 
 // Poster
 
-import iptechPoster from '../../../assets/video/scriptedVideo/iptechPoster.png'
-import vid3Poster from '../../../assets/video/scriptedVideo/vid3Poster.png'
-import vid4Poster from '../../../assets/video/scriptedVideo/vid4Poster.png'
-import iptPoster from '../../../assets/video/scriptedVideo/iptPoster.jpg'
+import iptechPoster from "../../../assets/video/scriptedVideo/iptechPoster.png";
 
+import vid3Poster from "../../../assets/video/scriptedVideo/vid3Poster.png";
+
+import vid4Poster from "../../../assets/video/scriptedVideo/vid4Poster.png";
+
+import iptPoster from "../../../assets/video/scriptedVideo/iptPoster.png";
 
 const scriptedVideos = [
   {

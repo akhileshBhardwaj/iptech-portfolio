@@ -58,8 +58,12 @@ export default function VideoHero() {
       </div>
 
       {/* Center card: swiper + info panel */}
-      <div className="flex-1 flex flex-col lg:flex-row bg-[#12141a] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl min-h-55 sm:min-h-85 lg:min-h-95">
-        <div className="relative w-full lg:w-[62%]">
+      <div className="flex-1 flex flex-col lg:flex-row bg-[#12141a] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+        {/* Fixed (not min) height — this is what keeps the box the
+            same size no matter what aspect ratio the video/thumbnail
+            actually is. object-cover inside SlideCard then crops any
+            source (landscape or portrait) to fit this exact box. */}
+        <div className="relative w-full h-55 sm:h-75 lg:h-95 lg:w-[62%]">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             loop={true}

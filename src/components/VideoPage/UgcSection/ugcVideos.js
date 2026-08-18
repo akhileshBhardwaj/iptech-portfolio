@@ -1,16 +1,16 @@
 // Video
 
-import iptech from '../../../assets/video/ugcVideos/iptech.mp4'
-import ipt from '../../../assets/video/ugcVideos/ipt.mp4'
-import vid3 from '../../../assets/video/ugcVideos/vid3.mp4'
-import vid4 from '../../../assets/video/ugcVideos/vid4.mp4'
+import iptech from "../../../assets/video/ugcVideos/iptech.mp4";
+import ipt from "../../../assets/video/ugcVideos/ipt.mp4";
+import vid3 from "../../../assets/video/ugcVideos/vid3.mp4";
+import vid4 from "../../../assets/video/ugcVideos/vid4.mp4";
 
 //Poster
 
-import iptechPoster from '../../../assets/video/ugcVideos/iptechPoster.png'
-import vid3Poster from '../../../assets/video/ugcVideos/vid3Poster.png'
-import vid4Poster from '../../../assets/video/ugcVideos/vid4Poster.png'
-import iptPoster from '../../../assets/video/ugcVideos/iptPoster.jpg'
+import iptechPoster from "../../../assets/video/ugcVideos/iptechPoster.png";
+import vid3Poster from "../../../assets/video/ugcVideos/vid3Poster.png";
+import vid4Poster from "../../../assets/video/ugcVideos/vid4Poster.png";
+import iptPoster from "../../../assets/video/ugcVideos/iptPoster.jpg";
 
 const ugcVideos = [
   {
